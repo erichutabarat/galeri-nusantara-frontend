@@ -1,0 +1,177 @@
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .card__content|flow {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card__content|flow > * {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  .card__title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+  }
+
+  .card:hover .card__content|flow {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+  }
+
+  .card:hover .card__content|flow > * {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+  }
+
+  .card:hover .card__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  header {
+    flex-direction: column-reverse;
+  }
+  .box {
+    flex-direction: column;
+    display: flex;
+  }
+  main aside {
+    align-self: stretch;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+
+/* Responsif untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  .image-and-form {
+    flex-direction: column;
+    align-items: center; /* Mengubah tata letak menjadi satu kolom saat layar kecil */
+  }
+
+  .image {
+    margin-right: 0; /* Menghapus margin kanan pada gambar */ /* Menambahkan margin bawah pada gambar */
+  }
+}
+
+/* Style untuk tampilan responsif */
+@media screen and (max-width: 768px) {
+  footer p:nth-child(1) {
+    font-size: 24px;
+  }
+  .img img {
+    width: 100%; /* Mengatur lebar gambar menjadi 80% dari lebar layar saat tampilan mobile */
+    height: auto; /* Memastikan gambar tetap proporsional */
+  }
+  .image img {
+    width: 100%; /* Mengatur lebar gambar menjadi 80% dari lebar layar saat tampilan mobile */
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer p:nth-child(1) {
+    font-size: 20px;
+  }
+
+  footer p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .social-icons a {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .social {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* Mengatur tata letak satu kolom pada layar dengan lebar maksimum 600px */
+  }
+
+  .card {
+    width: 90%; /* Mengatur lebar kartu menjadi 90% dari lebar layar saat tampilan mobile */
+    margin: 0 auto; /* Pusatkan kartu pada layar saat tampilan mobile */
+  }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .navbar.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar li {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+  }
+}
