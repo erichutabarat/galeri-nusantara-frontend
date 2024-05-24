@@ -13,7 +13,7 @@ const homepage = () => {
     Mari bergabung dengan kami dalam merayakan dan melestarikan kebudayaan Indonesia yang luar biasa ini.
     </p>
     <a
-      href="https://playvalorant.com/id-id/"
+      href="https://kwriu.kemdikbud.go.id/info-budaya-indonesia/warisan-budaya-tak-benda-indonesia/"
       target="_blank"
     >
       <button>Show More</button>
@@ -23,7 +23,7 @@ const homepage = () => {
     <img src="../pict-header.png" alt="" width="400" height="400" />
   </div>
 </header>
-<main>
+<main id="main">
 <h1>Jelajahi Budaya</h1>
 <section class="grid">
 <div class="card">

@@ -1,49 +1,32 @@
 const loginpage = () => {
   return `
-  <div class="wrapper">
-  <div class="title-text">
-	<div class="title login">Login Form</div>
-	<div class="title signup">Signup Form</div>
-  </div>
-  <div class="form-container">
-	<div class="slide-controls">
-	  <input type="radio" name="slide" id="login" checked>
-	  <input type="radio" name="slide" id="signup">
-	  <label for="login" class="slide login">Login</label>
-	  <label for="signup" class="slide signup">Signup</label>
-	  <div class="slider-tab"></div>
-	</div>
-	<div class="form-inner">
-	  <form action="#" class="login">
-		<div class="field">
-		  <input type="text" placeholder="Email Address" required>
-		</div>
-		<div class="field">
-		  <input type="password" placeholder="Password" required>
-		</div>
-		<div class="pass-link"><a href="#">Forgot password?</a></div>
-		<div class="field btn">
-		  <div class="btn-layer"></div>
-		  <input type="submit" value="Login">
-		</div>
-		<div class="signup-link">Not a member? <a href="">Signup now</a></div>
-	  </form>
-	  <form action="#" class="signup">
-		<div class="field">
-		  <input type="text" placeholder="Email Address" required>
-		</div>
-		<div class="field">
-		  <input type="password" placeholder="Password" required>
-		</div>
-		<div class="field">
-		  <input type="password" placeholder="Confirm password" required>
-		</div>
-		<div class="field btn">
-		  <div class="btn-layer"></div>
-		  <input type="submit" value="Signup">
-		</div>
-	  </form>
-	</div>
+  <div class="container-form">
+  <div class="screen">
+	  <div class="screen__content">
+		  <form class="login">
+          <div class="login__title">Login
+		  		</div>
+			  <div class="login__field">
+				  <i class="login__icon fas fa-user"></i>
+				  <input type="text" class="login__input" placeholder="User name / Email">
+			  </div>
+			  <div class="login__field">
+				  <i class="login__icon fas fa-lock"></i>
+				  <input type="password" class="login__input" placeholder="Password">
+			  </div>
+			  <button class="button login__submit">
+				  <span class="button__text">Log In Now</span>
+				  <i class="button__icon fas fa-chevron-right"></i>
+			  </button>
+			  <div class="alt-action-login">Belum memiliki akun? <a href="#/register">Register</a></div>				
+		  </form>
+	  </div>
+	  <div class="screen__background">
+		  <span class="screen__background__shape screen__background__shape4"></span>
+		  <span class="screen__background__shape screen__background__shape3"></span>		
+		  <span class="screen__background__shape screen__background__shape2"></span>
+		  <span class="screen__background__shape screen__background__shape1"></span>
+	  </div>		
   </div>
 </div>
 
