@@ -1,4 +1,9 @@
-const homepage = () => {
+import dataBudaya from "../../data/data-budaya";
+
+const homepage = async () => {
+  const data = await dataBudaya();
+  console.log(await data);
+  
   return `
   <header>
   <div class="head">
