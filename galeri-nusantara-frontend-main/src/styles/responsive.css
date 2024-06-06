@@ -91,6 +91,7 @@
 @media screen and (max-width: 768px) {
   footer p:nth-child(1) {
     font-size: 24px;
+    text-align: center;
   }
   .img img {
     width: 100%; /* Mengatur lebar gambar menjadi 80% dari lebar layar saat tampilan mobile */
@@ -105,6 +106,7 @@
 @media screen and (max-width: 600px) {
   footer p:nth-child(1) {
     font-size: 20px;
+    text-align: center;
   }
 
   footer p:nth-child(2) {
@@ -130,11 +132,29 @@
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .about {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-about {
+    margin: 1rem;
+  }
+  .card {
+    margin: 1rem;
+  }
 }
 
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-about {
+    margin: 1rem;
+  }
+  .card {
+    margin: 1rem;
   }
 }
 
@@ -142,10 +162,15 @@
   .grid {
     grid-template-columns: 1fr; /* Mengatur tata letak satu kolom pada layar dengan lebar maksimum 600px */
   }
+  .about {
+    grid-template-columns: 1fr;
+  }
 
+  .card-about {
+    margin: 1rem;
+  }
   .card {
-    width: 90%; /* Mengatur lebar kartu menjadi 90% dari lebar layar saat tampilan mobile */
-    margin: 0 auto; /* Pusatkan kartu pada layar saat tampilan mobile */
+    margin: 1rem;
   }
 }
 
@@ -379,5 +404,159 @@
   }
   .notfound .notfound-404 h1 {
     font-size: 112px;
+  }
+}
+
+@media (min-width: 768px) {
+  #detail {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #detail h1,
+  #detail img {
+    width: auto;
+  }
+
+  #detail img {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #detail h1 {
+    text-align: center;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #detail {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  #description {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  #description p {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    left: 0;
+  }
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.content.shifted {
+  margin-left: 250px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 20px; /* Add some padding to the sides */
+  }
+
+  .dashboard {
+    margin: 2rem 0; /* Remove the right margin */
+  }
+
+  .dashboard-sidebar {
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 10px; /* Decrease the gap between cards */
+  }
+  .dashboard-sidebar ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove default list styles */
+  }
+
+  .dashboard-sidebar ul li {
+    margin: 5px; /* Adjust margin between items */
+  }
+
+  .messages-container {
+    width: 100%; /* Make the messages container full width */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .table-container {
+    width: 100%; /* Make the table container full width */
+    padding: 1rem; /* Adjust padding */
+  }
+  table {
+    display: block;
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .cards-dashboard {
+    flex-direction: column; /* Stack the cards vertically */
+  }
+}
+
+/* Styles for screens above 768px and below 1400px */
+@media (min-width: 769px) and (max-width: 1399px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .content {
+    width: 50%;
+  }
+
+  .card-dashboard {
+    flex: 0 1; /* Two cards per row with margin */
+    margin-bottom: 20px;
+  }
+
+  .cards-dashboard {
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .messages-container {
+    width: 50%;
+    margin: 0; /* Half the width with margin */
+  }
+
+  .table-container {
+    width: 50%; /* Half the width with margin */
+  }
+
+  table {
+    display: block;
+    width: 100%;
   }
 }

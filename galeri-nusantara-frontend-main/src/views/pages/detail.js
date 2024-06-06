@@ -5,12 +5,14 @@ const detailpage = async (id) => {
     const result = await detailBudaya(id);
     const data = DetailCreator(result.data);
     return `
+    <main>
         <div>
             <h1>Detail page ${id}</h1>
             <div>
                 ${data}
             </div>
         </div>
+        <main>
     `
 };
 
