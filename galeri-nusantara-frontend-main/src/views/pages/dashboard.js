@@ -28,9 +28,8 @@ const dashboardPage = async () => {
     <div class="sidebar" id="sidebar">
         <ul>
             <li><a href="#/dashboard">Dashboard</a></li>
-            <li><a href="#">Daftar Postingan</a></li>
             <li><a href="#">Update Contributor</a></li>
-            <li><a href="#/update-postingan">Update Postingan</a></li>
+            <li><a>Logout</a></li>
         </ul>
     </div>
     <div class="main-content">
