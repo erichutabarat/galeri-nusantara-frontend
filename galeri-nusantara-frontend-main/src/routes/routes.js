@@ -7,6 +7,7 @@ import registerpage from "../views/pages/registerpage";
 import dashboardPage from "../views/pages/dashboard";
 import updatepostpage from "../views/pages/updatepostpage";
 import homeAfter from "../views/after-render/home-after";
+import dashboardAfter from "../views/after-render/dashboard-after";
 
 const routes = [
   { path: "#/", handler: homepage, afterRender: homeAfter},
@@ -15,7 +16,7 @@ const routes = [
   { path: "#/about", handler: aboutuspage },
   { path: "#/login", handler: loginpage },
   { path: "#/register", handler: registerpage },
-  { path: "#/dashboard", handler: dashboardPage },
+  { path: "#/dashboard", handler: dashboardPage, afterRender: dashboardAfter },
   { path: "#/update-postingan", handler: updatepostpage },
 ];
 
