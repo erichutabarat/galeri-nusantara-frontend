@@ -2,14 +2,15 @@ import "regenerator-runtime";
 import "../styles/style.css";
 import "../styles/responsive.css";
 import App from "./app";
-import "../scripts/hamburger";
-
+import Hamburger from "../scripts/hamburger";
 import loadEvent from "./eventLister";
+import Header from "../views/components/header";
 
 const Apps = new App();
 
 window.addEventListener("load", () => {
   Apps.navigate();
+  Header();
 });
 
 window.addEventListener("hashchange", () => {
@@ -21,3 +22,4 @@ window.addEventListener("popstate", () => {
 });
 
 loadEvent();
+Hamburger();

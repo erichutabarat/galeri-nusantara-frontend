@@ -1,8 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-
-  hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("active");
+export default async function Hamburger(){
+  document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('click', async (event) => {
+          const hamburger = event.target.closest(".hamburger");
+          const navbar = document.getElementById("navbar");
+          if(hamburger) {
+            navbar.classList.toggle("active");
+          }
+      });
   });
-});
+}

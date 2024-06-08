@@ -21,7 +21,6 @@ body {
 header {
   background-color: var(--bg-color);
   color: white;
-  padding: 20px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -1573,4 +1572,14 @@ footer {
 .copyright {
   color: var(--third-color);
   font-size: 15px;
+}
+
+.dashboard-post{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
 }
