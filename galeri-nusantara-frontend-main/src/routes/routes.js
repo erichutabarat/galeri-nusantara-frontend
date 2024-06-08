@@ -6,9 +6,10 @@ import loginpage from "../views/pages/loginpage";
 import registerpage from "../views/pages/registerpage";
 import dashboardPage from "../views/pages/dashboard";
 import updatepostpage from "../views/pages/updatepostpage";
+import homeAfter from "../views/after-render/home-after";
 
 const routes = [
-  { path: "#/", handler: homepage },
+  { path: "#/", handler: homepage, afterRender: homeAfter},
   { path: "#/detail", handler: detailpage },
   { path: "#/favorite", handler: favoritepage },
   { path: "#/about", handler: aboutuspage },

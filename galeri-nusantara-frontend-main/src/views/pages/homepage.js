@@ -2,8 +2,6 @@ import dataBudaya from "../../data/data-budaya";
 import CardCreator from "../../templates/creator/card-creator";
 
 const homepage = async () => {
-  const result = await dataBudaya();
-  const list = result.data.map(CardCreator).join('');
   return `
     <header>
       <div class="head">
@@ -30,8 +28,7 @@ const homepage = async () => {
   </header>
   <main id="main">
   <h1>Jelajahi Budaya</h1>
-  <section class="grid">
-    ${list}
+  <section id="budaya-list" class="grid">
   </section>
   <section class="image-and-form">
       <div class="image">

@@ -14,11 +14,14 @@ class App{
             if(route.path.includes('detail')){
                 const id = this.id;
                 const content = await route.handler(id);
-                this.show(content);
+                await this.show(content);
             }
             else{
                 const content = await route.handler();
-                this.show(content);
+                await this.show(content);
+            }
+            if(route.afterRender){
+                await route.afterRender();
             }
         }
         else{
