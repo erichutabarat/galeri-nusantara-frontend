@@ -19,7 +19,7 @@ const Header = async () => {
     }
     const element = `
         <nav>
-            <img class="logo" src="../logo.png" height="60px" alt="galeri nusantara"/>
+            <img class="logo" src="../logo.webp" height="60px" alt="galeri nusantara"/>
             <div class="nav-container">
                 <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
