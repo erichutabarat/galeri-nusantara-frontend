@@ -12,7 +12,6 @@ const Apps = new App();
 window.addEventListener("load", () => {
   Apps.navigate();
   Header();
-  Footer();
 });
 
 window.addEventListener("hashchange", () => {
