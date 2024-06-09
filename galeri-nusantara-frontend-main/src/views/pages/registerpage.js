@@ -7,17 +7,17 @@ const registerpage = () => {
       <div class="signup__title">Register</div>
       <div class="signup__field">
         <i class="signup__icon fas fa-user"></i>
-        <input type="text" class="signup__input" placeholder="Username">
+        <input type="text" class="signup__input" id="register-username" placeholder="Username">
       </div>
       <div class="signup__field">
         <i class="signup__icon fas fa-lock"></i>
-        <input type="password" class="signup__input" placeholder="Password">
+        <input type="password" class="signup__input" id="register-password" placeholder="Password">
       </div>
       <div class="signup__field">
         <i class="signup__icon fas fa-lock"></i>
         <input type="password" class="signup__input" placeholder="Confirm Password">
       </div>
-      <button class="button signup__submit">
+      <button class="button signup__submit" id="registerbutton">
         <span class="button__text">Sign Up Now</span>
         <i class="button__icon fas fa-chevron-right"></i>
       </button>
