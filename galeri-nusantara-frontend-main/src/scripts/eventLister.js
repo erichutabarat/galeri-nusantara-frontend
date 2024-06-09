@@ -32,7 +32,7 @@ const handleRegister = async () => {
         window.location.href = "#/login";
     }
     else{
-        alert("Something error when register!");
+        alert("Username already taken");
     }
 }
 export default async function loadEvent(){
