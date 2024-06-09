@@ -17,31 +17,7 @@ const Header = async () => {
                     </a>
                 </li>`;
     }
-    const element = `
-        <nav>
-            <img class="logo" src="../logo.webp" height="60px" alt="galeri nusantara"/>
-            <div class="nav-container">
-                <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                </div>
-                <ul class="navbar" id="navbar">
-                <li>
-                    <a href="#/">Home</a>
-                </li>
-                <li>
-                    <a href="#/favorite">Favorite</a>
-                </li>
-                <li>
-                    <a href="#/about">About Us</a>
-                </li>
-                ${dash}
-                </ul>
-            </div>
-        </nav>
-    `;
-    document.getElementById("header").innerHTML = element;
+    document.getElementById("dash").innerHTML = dash;
 };
 
 export default Header;

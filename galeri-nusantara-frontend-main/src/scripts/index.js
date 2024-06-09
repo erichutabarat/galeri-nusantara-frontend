@@ -5,7 +5,6 @@ import App from "./app";
 import Hamburger from "../scripts/hamburger";
 import loadEvent from "./eventLister";
 import Header from "../views/components/header";
-import Footer from "../views/components/footer";
 import Logout from "../utils/logout";
 
 const Apps = new App();
