@@ -1,4 +1,5 @@
 import ContributorDetail from "../../data/contributor-detail";
+import ContributorList from "../../data/contributor-list";
 import dataBudaya from "../../data/data-budaya";
 import dashboardPostCreator from "../../templates/creator/dashboard-post-creator";
 import CheckLogin from "../../utils/check-login";
@@ -24,6 +25,10 @@ const dashboardAfter = async () => {
         }
     }
     document.getElementById("dashboard-posts").innerHTML = elements;
+
+    const test = await ContributorList();
+    console.log(test);
+
 };
 
 export default dashboardAfter;

@@ -1201,6 +1201,7 @@ main h1 {
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   width: 100%;
   margin: 0;
 }
@@ -1582,4 +1583,26 @@ footer {
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px;
+}
+
+.widget{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.currentdate{
+  width: 40%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background: whitesmoke;
+  padding: 15px;
+  font-size: 20px;
+}
+.contributor-list{
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background: whitesmoke;
+  padding: 15px;
+  font-size: 20px;
 }
