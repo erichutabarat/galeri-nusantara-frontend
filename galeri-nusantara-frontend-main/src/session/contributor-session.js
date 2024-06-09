@@ -4,6 +4,9 @@ const ContributorSession = {
     },
     getSession(){
         return sessionStorage.getItem("contributor-session");
+    },
+    clearSession(){
+        sessionStorage.removeItem('contributor-session');
     }
 };
 

@@ -1,5 +1,6 @@
 import ContributorDetail from "../../data/contributor-detail";
 import dataBudaya from "../../data/data-budaya";
+import ContributorSession from "../../session/contributor-session";
 import dashboardPostCreator from "../../templates/creator/dashboard-post-creator";
 import CheckLogin from "../../utils/check-login";
 
@@ -9,6 +10,16 @@ const dashboardAfter = async () => {
         alert("You are not allowed to be here, please login first");
         window.location.href = "#/login";
     }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (event) => {
+            const logout = event.target.closest("#contributor-logout");
+            if(logout) {
+              ContributorSession.clearSession();
+              alert("Success Logout");
+              window.location.href = "#/";
+            }
+        });
+    });
     const data = await ContributorDetail(check);
     const userid = data.data.id;
     let elements;

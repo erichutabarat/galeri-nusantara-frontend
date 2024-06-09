@@ -12,7 +12,7 @@ const dashboardPage = async () => {
             <ul>
                 <li><a href="#/dashboard">Dashboard</a></li>
                 <li><a href="#">Update Contributor</a></li>
-                <li><a>Logout</a></li>
+                <li><a id="contributor-logout">Logout</a></li>
             </ul>
         </div>
         <div class="main-content">
