@@ -1,4 +1,5 @@
 import deletesContent from "../views/modal-box/deletes-content";
+import handleDelete from "../views/modal-box/handle-delete";
 import handleNewPost from "../views/modal-box/handle-newpost";
 import newPost from "../views/modal-box/new-post-content";
 
@@ -12,6 +13,7 @@ const closeModal = () => {
     const modalContent = document.getElementById("modal-content");
     modalContent.innerHTML = "";
     modal.style.display = "none";
+    window.location.reload();
 }
 const setModal = (contents) => {
     const modalContent = document.getElementById("modal-content");
@@ -22,11 +24,24 @@ export default function ModalManager(){
         document.addEventListener('click', async (event) => {
             const deletes = event.target.closest('.delete');
             if(deletes){
-                setModal(deletesContent());
+                const id = deletes.getAttribute("data-index");
+                setModal(deletesContent(id));
                 openModal(event);
             }
             const close = event.target.closest('.close');
             if(close){
+                closeModal();
+            }
+            const confirm = event.target.closest('#confirm-delete');
+            if(confirm){
+                const id = confirm.getAttribute('data-delete');
+                const res = await handleDelete(id);
+                if(res){
+                    alert("Success Menghapus postingan!")
+                }
+                else{
+                    alert("Gagal Menghapus!")
+                }
                 closeModal();
             }
             const cancel = event.target.closest('#cancel-delete');
