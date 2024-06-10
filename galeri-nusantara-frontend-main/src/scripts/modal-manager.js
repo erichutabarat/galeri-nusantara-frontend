@@ -1,4 +1,5 @@
 import deletesContent from "../views/modal-box/deletes-content";
+import handleNewPost from "../views/modal-box/handle-newpost";
 import newPost from "../views/modal-box/new-post-content";
 
 const openModal = (event) => {
@@ -36,6 +37,12 @@ export default function ModalManager(){
             if(newpost){
                 setModal(newPost());
                 openModal(event);
+            }
+            const create = event.target.closest("#create-now");
+            if(create){
+                event.preventDefault();
+                await handleNewPost(event);
+                closeModal();
             }
         });
     });
