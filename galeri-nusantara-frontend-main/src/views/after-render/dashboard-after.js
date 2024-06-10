@@ -1,6 +1,7 @@
 import ContributorDetail from "../../data/contributor-detail";
 import ContributorList from "../../data/contributor-list";
 import dataBudaya from "../../data/data-budaya";
+import ModalManager from "../../scripts/modal-manager";
 import dashboardPostCreator from "../../templates/creator/dashboard-post-creator";
 import CheckLogin from "../../utils/check-login";
 
@@ -28,7 +29,6 @@ const dashboardAfter = async () => {
 
     const test = await ContributorList();
     console.log(test);
-
 };
 
 export default dashboardAfter;

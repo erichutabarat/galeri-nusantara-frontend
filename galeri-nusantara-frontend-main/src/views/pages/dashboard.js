@@ -1,3 +1,4 @@
+import ModalManager from "../../scripts/modal-manager";
 import CheckLogin from "../../utils/check-login";
 
 const dashboardPage = async () => {
@@ -16,6 +17,7 @@ const dashboardPage = async () => {
         month: monthNames[dates.getMonth()],
         year: dates.getFullYear(),
     };
+    ModalManager();
     return `
         <div class="dashboard-sidebar">
             <div class="sidebar" id="sidebar">
@@ -45,6 +47,15 @@ const dashboardPage = async () => {
             <div id="dashboard-posts" class="dashboard-posts">        
             </div>
         </div>
+        </div>
+        <div id="modal" class="modalBox">
+            <div id="modal-header">
+                <div id="modal-title">
+                </div>
+                <span class="close">&times;</span>
+            </div>
+            <div id="modal-content">
+            </div>
         </div>
         `;
 };

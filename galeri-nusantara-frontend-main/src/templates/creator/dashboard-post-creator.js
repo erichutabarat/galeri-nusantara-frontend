@@ -5,7 +5,7 @@ const dashboardPostCreator = (data) => {
             <div class="dashboard-post-updated">${data.updatedAt}</div>
             <div>
                 <button>Update</button>
-                <button>Delete</button>
+                <button class="delete" data-index="${data.id}">Delete</button>
             </div>
         </div>
     `;

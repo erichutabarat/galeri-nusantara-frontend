@@ -23,7 +23,7 @@ class App {
         }
         await this.show(content);
 
-        if (route.afterRender) {
+        if(route.afterRender){
           const afterRenderModule = await route.afterRender();
           const afterRender = afterRenderModule.default;
           await afterRender();
