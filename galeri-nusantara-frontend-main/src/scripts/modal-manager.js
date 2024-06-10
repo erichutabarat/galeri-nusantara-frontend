@@ -1,12 +1,8 @@
-const deletesContent = () => {
-    return `
-        <h2>Apakah kamu yakin ingin menghapus?</h2>
-        <button>Ya</button>
-        <button>Tidak</button>
-    `
-};
+import deletesContent from "../views/modal-box/deletes-content";
+import newPost from "../views/modal-box/new-post-content";
 
-const openModal = () => {
+const openModal = (event) => {
+    event.preventDefault();
     const modal = document.querySelector(".modalBox");
     modal.style.display = "block";
 }
@@ -18,19 +14,28 @@ const closeModal = () => {
 }
 const setModal = (contents) => {
     const modalContent = document.getElementById("modal-content");
-    modalContent.innerHTML = contents();
+    modalContent.innerHTML = contents;
 }
 export default function ModalManager(){
     document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', async (event) => {
             const deletes = event.target.closest('.delete');
             if(deletes){
-                setModal(deletesContent);
-                openModal();
+                setModal(deletesContent());
+                openModal(event);
             }
             const close = event.target.closest('.close');
             if(close){
                 closeModal();
+            }
+            const cancel = event.target.closest('#cancel-delete');
+            if(cancel){
+                closeModal();
+            }
+            const newpost = event.target.closest("#create-new-post");
+            if(newpost){
+                setModal(newPost());
+                openModal(event);
             }
         });
     });

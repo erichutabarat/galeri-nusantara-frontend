@@ -44,6 +44,9 @@ const dashboardPage = async () => {
                     </ul>
                 </div>
             </div>
+            <div id="create-post">
+                <button id="create-new-post">Buat Postingan Baru</button>
+            </div>
             <div id="dashboard-posts" class="dashboard-posts">        
             </div>
         </div>
