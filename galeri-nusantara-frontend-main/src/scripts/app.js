@@ -6,11 +6,17 @@ class App {
   constructor() {
     this.path = window.location.hash;
     this.appLocation = document.querySelector('#app');
+    this.currentRouteRequest = null;
   }
   async navigate() {
     this.getPath();
     const route = routes.find(route => route.path === this.path);
-    if (route) {
+
+    // Create a unique token for the current route request
+    const currentRouteRequest = {};
+    this.currentRouteRequest = currentRouteRequest;
+
+    if(route) {
       try {
         const handlerModule = await route.handler();
         const handler = handlerModule.default;
@@ -21,19 +27,23 @@ class App {
         } else {
           content = await handler();
         }
+        if(this.currentRouteRequest !== currentRouteRequest) return;
         await this.show(content);
-
-        if(route.afterRender){
+        if (route.afterRender) {
           const afterRenderModule = await route.afterRender();
           const afterRender = afterRenderModule.default;
+          if (this.currentRouteRequest !== currentRouteRequest) return;
           await afterRender();
         }
-      } catch (error) {
+      } catch(error) {
         console.error('Error loading route handler:', error);
-        this.show(errorpage());
+        if(this.currentRouteRequest === currentRouteRequest) {
+          await this.show(errorpage());
+        }
       }
-    } else {
-      this.show(errorpage());
+    }
+    else{
+      await this.show(errorpage());
     }
   }
   getPath() {
