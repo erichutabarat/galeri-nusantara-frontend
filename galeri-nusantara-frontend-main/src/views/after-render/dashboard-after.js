@@ -23,6 +23,7 @@ const dashboardAfter = async () => {
             elements = "<h3>You dont have posted article!</h3>";
         }
     }
+    console.log(elements)
     document.getElementById("dashboard-posts").innerHTML = elements;
 };
 
