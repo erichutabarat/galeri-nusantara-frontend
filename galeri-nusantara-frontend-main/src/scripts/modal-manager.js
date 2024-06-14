@@ -1,7 +1,10 @@
+import detailBudaya from "../data/data-detail";
 import deletesContent from "../views/modal-box/deletes-content";
 import handleDelete from "../views/modal-box/handle-delete";
 import handleNewPost from "../views/modal-box/handle-newpost";
+import handleUpdate from "../views/modal-box/handle-update";
 import newPost from "../views/modal-box/new-post-content";
+import updateContent from "../views/modal-box/update-content";
 
 const openModal = (event) => {
     event.preventDefault();
@@ -57,6 +60,28 @@ export default function ModalManager(){
             if(create){
                 event.preventDefault();
                 await handleNewPost(event);
+                closeModal();
+            }
+            const updates = event.target.closest("#updates");
+            if(updates){
+                const dataid = updates.getAttribute("data-index");
+                const titles = updates.getAttribute("data-title");
+                const sources = updates.getAttribute("data-source");
+                const descriptions = updates.getAttribute("data-description");
+                const dataobjs = {
+                    id: dataid,
+                    titles: titles,
+                    sources: sources,
+                    descriptions: descriptions
+                };
+                console.log(dataobjs);
+                await setModal(updateContent(dataobjs));
+                openModal(event);
+            }
+            const update = event.target.closest("#update-now");
+            if(update){
+                event.preventDefault();
+                await handleUpdate(event);
                 closeModal();
             }
         });

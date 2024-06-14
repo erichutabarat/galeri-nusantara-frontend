@@ -1,14 +1,26 @@
 import Config from "../config/config";
 import axios from "axios";
 
-const ContributorNewPost = async (token, title, source, description) => {
+const ContributorNewPost = async (data) => {
     try {
-        const postData = {
-            token: token,
-            title: title,
-            source: source,
-            description: description
-        };
+        let postData;
+        if(data.id){
+            postData = {
+                token: data.token,
+                id: data.id,
+                title: data.title,
+                source: data.source,
+                description: data.description
+            };
+        }
+        else{
+            postData = {
+                token: data.token,
+                title: data.title,
+                source: data.source,
+                description: data.description
+            };
+        }
         const headers = {
             "Content-Type": "application/x-www-form-urlencoded"
         };
