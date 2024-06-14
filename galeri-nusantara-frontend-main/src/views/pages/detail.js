@@ -7,7 +7,7 @@ const detailpage = async (id) => {
     return `
     <main>
         <div>
-            <h1>Detail page ${id}</h1>
+            <h1>Detail page</h1>
             <div>
                 ${data}
             </div>
