@@ -23,7 +23,7 @@ const homepage = async () => {
         </a>
       </div>
     <div class="img">
-      <img src="../pict-header.webp" alt="" width="400" height="400" />
+      <img src="../pict-header.webp" alt="Galeri Nusantara" width="400" height="400" />
     </div>
   </header>
   <main id="main">
@@ -32,7 +32,7 @@ const homepage = async () => {
   </section>
   <section class="image-and-form">
       <div class="image">
-          <img src="../pict-question.webp" alt="Big Image">
+          <img src="../pict-question.webp" width="400" height="320" alt="Big Image">
       </div>
       <div class="form">
           <h2>Mari Bergabung Menjadi Kontributor</h2>

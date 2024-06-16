@@ -1530,7 +1530,6 @@ footer p:nth-child(2) {
 }
 
 footer {
-  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeri Nusantara</title>
-    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
-    <script
-      src="https://kit.fontawesome.com/c8e4d183c2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    />
-    <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="32x32" href="defaultprofile.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="defaultprofile.png" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Galeri Nusantara</title>
+      
+      <!-- Preconnect and dns-prefetch for critical third-party origins -->
+      <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
+      <link rel="dns-prefetch" href="https://ka-f.fontawesome.com">
+      <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+      <link rel="dns-prefetch" href="https://use.fontawesome.com">
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">  
+      
+      <!-- Preload critical resources -->
+      <link rel="preload" href="https://fonts.cdnfonts.com/css/nexa-bold" as="font" type="font/woff2" crossorigin />
+      <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+      <link rel="preload" fetchpriority="high" as="image" href="../pict-header.webp" type="image/webp" />
+          
+      <!-- Load FontAwesome asynchronously -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" media="print" onload="this.media='all'" />
+      <noscript>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+      </noscript>
+      
+      <!-- Async and defer non-essential scripts -->
+      <script src="https://use.fontawesome.com/b070c8f1df.js" async></script>
+      <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous" defer></script>
+      
+      <!-- Favicons -->
+      <link rel="icon" type="image/png" sizes="32x32" href="defaultprofile.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="defaultprofile.png" />
   </head>
   <body>
     <header id="header">
       <nav>
-        <img class="logo" src="../logo.webp" height="60px" alt="galeri nusantara"/>
+        <img class="logo" src="../logo.webp" height="60px" width="200px" alt="galeri nusantara"/>
         <div class="nav-container">
             <div class="hamburger" id="hamburger">
             <span class="bar"></span>
