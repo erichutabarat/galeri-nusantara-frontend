@@ -16,7 +16,7 @@ const dashboardAfter = async () => {
         const allPost = await dataBudaya();
         const filterByAuthor = allPost.data.filter(item => item.authorId===userid);
         if(filterByAuthor){
-            const showpost = filterByAuthor.map((item) => dashboardPostCreator(item));
+            const showpost = filterByAuthor.map((item) => dashboardPostCreator(item, item.images[0].id));
             elements = showpost;
         }
         else{

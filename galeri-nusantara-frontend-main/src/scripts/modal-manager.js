@@ -1,10 +1,12 @@
-import detailBudaya from "../data/data-detail";
 import deletesContent from "../views/modal-box/deletes-content";
 import handleDelete from "../views/modal-box/handle-delete";
 import handleNewPost from "../views/modal-box/handle-newpost";
 import handleUpdate from "../views/modal-box/handle-update";
 import newPost from "../views/modal-box/new-post-content";
 import updateContent from "../views/modal-box/update-content";
+import updateImageContent from "../views/modal-box/update-image-content";
+import ImageUpload from "../data/image-upload";
+
 
 const openModal = (event) => {
     event.preventDefault();
@@ -68,13 +70,14 @@ export default function ModalManager(){
                 const titles = updates.getAttribute("data-title");
                 const sources = updates.getAttribute("data-source");
                 const descriptions = updates.getAttribute("data-description");
+                const imageid = updates.getAttribute("data-image");
                 const dataobjs = {
                     id: dataid,
                     titles: titles,
                     sources: sources,
-                    descriptions: descriptions
+                    descriptions: descriptions,
+                    imageid: imageid
                 };
-                console.log(dataobjs);
                 await setModal(updateContent(dataobjs));
                 openModal(event);
             }
@@ -82,6 +85,31 @@ export default function ModalManager(){
             if(update){
                 event.preventDefault();
                 await handleUpdate(event);
+                closeModal();
+            }
+            const updateimage = event.target.closest("#update-image-budaya");
+            if(updateimage){
+                event.preventDefault();
+                const data = updateimage.getAttribute("data-image-id");
+                const contentswait = await updateImageContent(data);
+                await setModal(contentswait);
+                openModal(event);
+            }
+            const uploadnow = event.target.closest('#upload-image-now');
+            if(uploadnow){
+                const image = document.getElementById("images").files[0];
+                const budayaid = uploadnow.getAttribute("data-index");
+                const formData = {
+                    images: image,
+                    budayaid: budayaid
+                };
+                const result = await ImageUpload(formData);
+                if(result.message==="Upload success"){
+                    alert("Upload Success");
+                }
+                else{
+                    alert("Upload Failed");
+                }
                 closeModal();
             }
         });

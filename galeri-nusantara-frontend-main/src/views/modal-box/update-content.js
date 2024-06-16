@@ -1,7 +1,7 @@
 const updateContent = (data) => {
     return `
         <div id="update-content">
-            <button>Update Gambar</button>
+            <button id="update-image-budaya" data-image-id="${data.imageid}">Update Gambar</button>
             <form id="form-update-content" onsubmit="return false;" data-index="${data.id}">
                 <label for="update-title">Judul:</label>
                 <input type="text" name="update-title" id="update-title" value="${data.titles}"/>

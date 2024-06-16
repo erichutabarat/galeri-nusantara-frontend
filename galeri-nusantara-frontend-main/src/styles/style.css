@@ -1169,6 +1169,7 @@ main h1 {
 .sidebar ul {
   list-style-type: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .sidebar ul li {
