@@ -1,4 +1,4 @@
 const Config = {
-    API_URL: '//52.54.162.74:8080'
+    API_URL: 'https://galeri-nusantara-backend.biz.id/'
 };
 export default Config;
