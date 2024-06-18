@@ -62,13 +62,33 @@ module.exports = merge(common, {
     ],
     splitChunks: {
       chunks: 'all',
+      maxInitialRequests: 3,
+      maxAsyncRequests: 3,
+      minSize: 100000,
+      maxSize: 250000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
     },
     runtimeChunk: 'single',
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+      protectWebpackAssets: false,
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
     }),
   ],
 });
